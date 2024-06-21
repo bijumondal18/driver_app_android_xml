@@ -1,6 +1,8 @@
 package com.app.allride.driver.api
 
 
+import com.app.allride.driver.features.auth.login.model.RequestLogin
+import com.app.allride.driver.features.auth.login.model.ResponseLogin
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
 import retrofit2.Call
@@ -36,12 +38,12 @@ interface ApiInterface {
     }
 
 
-//    @POST(Constants.LOGIN_URL)
-//    suspend fun login(
-//        @Header("Content-Type") type: String,
-//        @Header("Accept") accept: String,
-//        @Header("device") device: String,
-//        @Body request: RequestLogin
-//    ): Call<ResponseLogin>
+    @POST(Constants.LOGIN_URL)
+     fun login(
+        @Header("Content-Type") type: String,
+        @Header("Accept") accept: String,
+        @Header("device") device: String,
+        @Body request: RequestLogin
+    ): Call<ResponseLogin>
 
 }

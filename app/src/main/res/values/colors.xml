@@ -7,8 +7,8 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="darkGray">#424242</color>
     <color name="gray">#B3B3B3</color>
-    <color name="lightGray">#ECECEC</color>
-    <color name="textField">#ECECEC</color>
+    <color name="lightGray">#E5E5E5</color>
+    <color name="textField">#EEEEEE</color>
     <color name="darkYellow">#87680C</color>
     <color name="green">#1FA324</color>
 </resources>

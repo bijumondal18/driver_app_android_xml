@@ -1,6 +1,13 @@
 package com.app.allride.driver.api
+
+
 object Constants {
-    const val BASE_URL = "http://192.168.1.172/api/v2/"
+
+    const val API_CONTENT_TYPE = "application/json"
+    const val DEVICE_TYPE = "m" //m = mobile
+
+
+    const val BASE_URL = "https://staging.allrideapps.net/api/v2/"
 
      // AUTH URLS
     const val LOGIN_URL = "${BASE_URL}central-users/login"

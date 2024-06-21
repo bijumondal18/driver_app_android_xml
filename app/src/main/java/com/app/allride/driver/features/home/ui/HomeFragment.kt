@@ -16,6 +16,7 @@ import androidx.core.app.ActivityCompat
 import com.app.allride.driver.MainActivity
 import com.app.allride.driver.R
 import com.app.allride.driver.databinding.FragmentHomeBinding
+import com.app.allride.driver.utils.AppHelper
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -51,12 +52,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         mapView = binding.mainMapView
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
-        mapOptions = GoogleMapOptions()
-        mapOptions.compassEnabled(false)
-            .mapType(GoogleMap.MAP_TYPE_HYBRID)
-            .rotateGesturesEnabled(true)
-            .tiltGesturesEnabled(true)
-
 
         return binding.root.rootView
     }
@@ -88,6 +83,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
+        mapOptions = GoogleMapOptions()
+        mapOptions.compassEnabled(false)
+            .mapType(GoogleMap.MAP_TYPE_HYBRID)
+            .rotateGesturesEnabled(true)
+            .tiltGesturesEnabled(true)
+
         try {
             mMap.setMapStyle(
                 MapStyleOptions.loadRawResourceStyle(
@@ -96,10 +97,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                 )
             )
             mMap.isBuildingsEnabled = true
-            Log.d(TAG, "Map Style Changed")
+            AppHelper.showDebugLog(TAG, "Map Style Changed")
 
         } catch (e: Resources.NotFoundException) {
-            Log.e(TAG, e.toString())
+            AppHelper.showDebugLog(TAG, e.toString())
         }
 
         // Check for location permissions

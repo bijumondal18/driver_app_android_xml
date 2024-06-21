@@ -8,6 +8,7 @@ class AppPreference(val context: Context) {
         private const val PREFS_NAME = "com.gozocabs.sessionPref"
         private const val KEY_FIRST_TIME_APP_LOAD = "FIRST_TIME_APP_LOAD"
         private const val KEY_LOGGED_IN = "LOGGED_IN"
+        private const val KEY_TENANT_ID = "TENANT_ID"
         private const val KEY_EMAIL_AND_NUMBER_AVAILABLE = "EMAIL_AND_NUMBER_AVAILABLE"
         private const val KEY_PROFILE_PIC_URL = "PROFILE_PIC_URL"
         private const val KEY_FIRST_NAME = "FIRST_NAME"
@@ -109,6 +110,16 @@ class AppPreference(val context: Context) {
 
     fun isLoggedIn(): Boolean {
         return sharedPref.getBoolean(KEY_LOGGED_IN, false)
+    }
+
+    fun setTenantId(text: String) {
+        val editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putString(KEY_TENANT_ID, text)
+        editor.apply()
+    }
+
+    fun getTenantId(): String? {
+        return sharedPref.getString(KEY_TENANT_ID, null)
     }
 
     fun setProfilePicUrl(text: String) {

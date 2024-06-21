@@ -1,4 +1,5 @@
 package com.app.allride.driver.utils
+
 import android.content.Context
 import android.content.SharedPreferences
 
@@ -9,6 +10,7 @@ class AppPreference(val context: Context) {
         private const val KEY_FIRST_TIME_APP_LOAD = "FIRST_TIME_APP_LOAD"
         private const val KEY_LOGGED_IN = "LOGGED_IN"
         private const val KEY_TENANT_ID = "TENANT_ID"
+        private const val KEY_USER_ID = "USER_ID"
         private const val KEY_EMAIL_AND_NUMBER_AVAILABLE = "EMAIL_AND_NUMBER_AVAILABLE"
         private const val KEY_PROFILE_PIC_URL = "PROFILE_PIC_URL"
         private const val KEY_FIRST_NAME = "FIRST_NAME"
@@ -120,6 +122,16 @@ class AppPreference(val context: Context) {
 
     fun getTenantId(): String? {
         return sharedPref.getString(KEY_TENANT_ID, null)
+    }
+
+    fun setUserId(value: Int) {
+        val editor: SharedPreferences.Editor = sharedPref.edit()
+        editor.putInt(KEY_USER_ID, value)
+        editor.apply()
+    }
+
+    fun getUserId(): Int {
+        return sharedPref.getInt(KEY_USER_ID, 0)
     }
 
     fun setProfilePicUrl(text: String) {
@@ -309,7 +321,7 @@ class AppPreference(val context: Context) {
         editor.apply()
     }
 
-    fun getSourceCityId(): Int? {
+    fun getSourceCityId(): Int {
         return sharedPref.getInt(KEY_SOURCE_CITY_ID, 0)
     }
 
@@ -330,7 +342,7 @@ class AppPreference(val context: Context) {
         editor.apply()
     }
 
-    fun getDestinationId(): Int? {
+    fun getDestinationId(): Int {
         return sharedPref.getInt(KEY_DESTINATION_ID, 0)
     }
 
@@ -341,7 +353,7 @@ class AppPreference(val context: Context) {
     }
 
     //One-Way Pickup date
-    fun getOWPickupDate(): Long? {
+    fun getOWPickupDate(): Long {
         return sharedPref.getLong(KEY_OW_PICKUP_DATE, 0)
     }
 
@@ -353,7 +365,7 @@ class AppPreference(val context: Context) {
     }
 
     //Airport Transfer Pickup date
-    fun getATPickupDate(): Long? {
+    fun getATPickupDate(): Long {
         return sharedPref.getLong(KEY_AT_PICKUP_DATE, 0)
     }
 

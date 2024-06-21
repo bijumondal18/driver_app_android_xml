@@ -105,6 +105,7 @@ class LoginActivity : AppCompatActivity() {
 
                                 // Save data in shared preference / local storage
                                 mPreference.setIsLoggedIn(true)
+                                mPreference.setUserId(mData.data.userId)
                                 mPreference.setTenantId(mData.data.tenantId)
                                 mPreference.setAuth(mData.data.token)
 

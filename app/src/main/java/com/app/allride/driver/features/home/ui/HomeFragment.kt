@@ -20,9 +20,11 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMapOptions
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MapCapabilities
 import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 
@@ -37,6 +39,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mapView: MapView
     private lateinit var binding: FragmentHomeBinding
     private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private lateinit var mapOptions: GoogleMapOptions
 
 
     override fun onCreateView(
@@ -48,6 +51,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         mapView = binding.mainMapView
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
+        mapOptions = GoogleMapOptions()
+        mapOptions.compassEnabled(false)
+            .mapType(GoogleMap.MAP_TYPE_HYBRID)
+            .rotateGesturesEnabled(true)
+            .tiltGesturesEnabled(true)
+
 
         return binding.root.rootView
     }
@@ -86,6 +95,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                     R.raw.map_style
                 )
             )
+            mMap.isBuildingsEnabled = true
             Log.d(TAG, "Map Style Changed")
 
         } catch (e: Resources.NotFoundException) {

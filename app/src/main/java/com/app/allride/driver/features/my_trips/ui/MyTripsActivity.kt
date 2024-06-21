@@ -33,6 +33,9 @@ class MyTripsActivity : AppCompatActivity() {
         mPreference = AppPreference(this@MyTripsActivity)
 
         setupToolbar()
+
+        fetchMyTrips()
+
     }
 
 
@@ -41,6 +44,11 @@ class MyTripsActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "My Trips"
         actionBar.setDisplayHomeAsUpEnabled(true)
+        binding.toolbarMyTrips.setNavigationIcon(R.drawable.ic_back_arrow)
+    }
+
+    private fun fetchMyTrips(){
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

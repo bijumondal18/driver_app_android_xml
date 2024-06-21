@@ -16,7 +16,12 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_my_trips"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="?attr/actionBarSize"
+            android:theme="@style/ToolbarColoredBackArrow"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextAppearance="@style/ToolbarSubtitleAppearance"
+            app:titleTextAppearance="@style/ToolbarTitleAppearance"
+            app:titleTextColor="@color/black">
 
         </androidx.appcompat.widget.Toolbar>
 

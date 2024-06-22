@@ -1,6 +1,11 @@
 package com.app.allride.driver.features.my_trips.model
 
-data class Data(
+import com.app.allride.driver.features.trip_details.model.Activity
+import com.app.allride.driver.features.trip_details.model.Operator
+import com.app.allride.driver.features.trip_details.model.TripType
+
+data class TripData(
+    val activities: List<Activity>,
     val actual_duration: Any,
     val assigned_driver_id: Int,
     val assigned_route_id: Int,
@@ -19,19 +24,21 @@ data class Data(
     val number_of_baggages: Int,
     val number_of_children: Int,
     val number_of_infants: Int,
+    val `operator`: Operator,
     val operator_id: Int,
     val passengers_count: Int,
     val reservations: List<Any>,
-    val route: Route,
+    val reviews: List<Any>,
+    val route: com.app.allride.driver.features.trip_details.model.Route,
     val scheduled_on: String,
     val seat_available: Any,
-    val solution: Solution,
     val solution_id: Int,
-    val startEndStations: List<StartEndStation>,
+    val startEndStations: List<com.app.allride.driver.features.trip_details.model.StartEndStation>,
     val start_time: Any,
     val trip_reference_number: String,
     val trip_status: Int,
+    val trip_type: TripType,
     val updated_at: String,
     val updated_by: Any,
-    val vehicle: Vehicle
+    val vehicle: com.app.allride.driver.features.trip_details.model.Vehicle
 )

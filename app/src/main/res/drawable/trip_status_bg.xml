@@ -8,7 +8,7 @@
         android:color="@color/warning" />
     <padding
         android:bottom="6dp"
-        android:left="8dp"
-        android:right="8dp"
+        android:left="12dp"
+        android:right="12dp"
         android:top="6dp" />
 </shape>

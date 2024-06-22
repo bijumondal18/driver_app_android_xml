@@ -1,6 +1,4 @@
-package com.app.allride.driver.features.my_trips.model
-
-import com.app.allride.driver.features.trip_details.model.Location
+package com.app.allride.driver.features.trip_details.model
 
 data class Zone(
     val contact_email: Any,

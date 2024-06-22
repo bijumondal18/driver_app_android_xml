@@ -4,6 +4,7 @@ package com.app.allride.driver.api
 import com.app.allride.driver.features.auth.login.model.RequestLogin
 import com.app.allride.driver.features.auth.login.model.ResponseLogin
 import com.app.allride.driver.features.my_trips.model.TripListResponseModel
+import com.app.allride.driver.features.trip_details.model.TripDetailsResponseModel
 import com.app.allride.driver.utils.AppPreference
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -63,5 +64,13 @@ interface ApiInterface {
         @Path("userId") userId: Int,
     ): Call<TripListResponseModel>
 
-
+    @GET("${Constants.TRIP_DETAILS_URL}/{tripId}")
+    fun tripDetails(
+        @Header("Content-Type") type: String,
+        @Header("Accept") accept: String,
+        @Header("device") device: String,
+        @Header("X-Tenant") xTenant: String,
+        @Header("Authorization") token: String,
+        @Path("tripId") tripId: Int,
+    ): Call<TripDetailsResponseModel>
 }

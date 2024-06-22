@@ -154,6 +154,20 @@ class AppHelper {
             return tripStatus!!
         }
 
+        fun getDispatchActivityStatus(type: Int): String {
+            var status: String? = null
+            when (type) {
+                0 -> status = "Scheduled"
+                1 -> status = "Rejected"
+                2 -> status = "Accepted"
+                3 -> status = "Cancelled"
+                4 -> status = "Arrived"
+                5 -> status = "Cancelled"
+                6 -> status = "Completed"
+            }
+            return status!!
+        }
+
         fun getTripType(type: Int): String {
             var tripType: String? = null
             when (type) {

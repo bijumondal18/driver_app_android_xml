@@ -7,6 +7,7 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+
     <dimen name="padding_2">2dp</dimen>
     <dimen name="padding_4">4dp</dimen>
     <dimen name="padding_8">8dp</dimen>
@@ -29,9 +30,9 @@
     <dimen name="margin_48">48dp</dimen>
     <dimen name="margin_64">64dp</dimen>
 
-    <dimen name="elevation_1dp">1dp</dimen>
-    <dimen name="elevation_2dp">2dp</dimen>
-    <dimen name="elevation_3dp">3dp</dimen>
+    <dimen name="elevation_s">12dp</dimen>
+    <dimen name="elevation_m">24dp</dimen>
+    <dimen name="elevation_l">30dp</dimen>
 
     <dimen name="font_10">10sp</dimen>
     <dimen name="font_12">12sp</dimen>

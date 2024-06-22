@@ -34,7 +34,7 @@ object Constants {
 
     //Trip
     const val TRIP_LIST_URL = "${BASE_URL}drivers"
-    const val tripDetails = "${BASE_URL}trips"
+    const val TRIP_DETAILS_URL = "${BASE_URL}trips"
     const val updateTripStatus = "${BASE_URL}trips"
     const val addFeedback = "${BASE_URL}reviews"
 

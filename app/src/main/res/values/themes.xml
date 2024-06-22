@@ -14,6 +14,8 @@
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
         <item name="windowNoTitle">true</item>
         <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
+        <item name="android:ambientShadowAlpha">0.01</item>
+        <item name="android:spotShadowAlpha">0.08</item>
     </style>
 
     <!-- Splash Screen Theme. -->

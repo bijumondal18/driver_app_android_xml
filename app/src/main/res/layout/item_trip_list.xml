@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/padding_12"
+    android:id="@+id/trip_card"
+    android:layout_marginBottom="@dimen/padding_12"
     android:background="@drawable/card_bg"
-    android:elevation="1dp">
+    android:elevation="@dimen/elevation_s">
 
     <TextView
         android:id="@+id/tv_trip_status"
@@ -15,7 +16,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/trip_status_bg"
-        android:fontFamily="@font/euclid_semi_bold"
+        android:fontFamily="@font/euclid_medium"
         android:text="Scheduled"
         android:textColor="@color/black"
         android:textSize="@dimen/font_16"
@@ -29,7 +30,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/euclid_semi_bold"
-        android:text="$ 20"
+        android:text="$20.8"
         android:textColor="@color/black"
         android:textSize="@dimen/font_20"
         app:layout_constraintBottom_toBottomOf="@+id/tv_trip_status"
@@ -78,22 +79,26 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/euclid_regular"
-        android:maxLines="1"
-        android:text="TextView"
+        android:maxLines="2"
+        android:text="TextView TextViewTextViewTextViewTextView TextViewTextView"
         android:textColor="@color/darkGray"
         android:textSize="@dimen/font_16"
         app:layout_constraintBottom_toBottomOf="@+id/tv_source_time"
         app:layout_constraintEnd_toStartOf="@+id/tv_source_time"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/tv_source_time" />
+        app:layout_constraintTop_toTopOf="@+id/tv_source_time"
+        app:layout_constraintVertical_bias="0.060000002" />
 
     <TextView
         android:id="@+id/tv_source_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:text=""
+        android:text="08:30 PM"
+        android:fontFamily="@font/euclid_regular"
+        android:textSize="@dimen/font_14"
+        android:textColor="@color/darkGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_trip_type" />
 
@@ -105,8 +110,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/euclid_regular"
-        android:maxLines="1"
-        android:text="TextView"
+        android:maxLines="2"
+        android:text="TextView TextView TextView TextView TextView TextView TextView TextView"
         android:textColor="@color/darkGray"
         android:textSize="@dimen/font_16"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,10 +123,14 @@
         android:id="@+id/tv_destination_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:fontFamily="@font/euclid_regular"
+        android:text="08:30 PM"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/font_14"
         app:layout_constraintBottom_toBottomOf="@+id/tv_destination_address"
         app:layout_constraintEnd_toEndOf="@+id/tv_source_time"
-        app:layout_constraintTop_toTopOf="@+id/tv_destination_address" />
+        app:layout_constraintTop_toTopOf="@+id/tv_destination_address"
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -131,6 +140,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_source_address"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_source_address"
+        app:layout_constraintVertical_bias="0.17000002"
         app:srcCompat="@drawable/ic_source" />
 
     <ImageView
@@ -141,6 +151,7 @@
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/tv_destination_address"
+        app:layout_constraintVertical_bias="0.07999998"
         app:srcCompat="@drawable/ic_destination" />
 
     <View

@@ -46,4 +46,5 @@ data class Driver(
     val work_mode: Int,
     val zip: String,
     val zone_id: Int
+
 )

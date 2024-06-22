@@ -14,6 +14,7 @@ import com.app.allride.driver.R
 import com.app.allride.driver.api.ApiInterface
 import com.app.allride.driver.api.Constants
 import com.app.allride.driver.databinding.ActivityMyTripsBinding
+import com.app.allride.driver.features.bus_trip_module.ui.BusBookingActivity
 import com.app.allride.driver.features.my_trips.adapter.MyTripsListAdapter
 import com.app.allride.driver.features.my_trips.model.TripListResponseModel
 import com.app.allride.driver.features.trip_details.model.TripDetailsResponseModel
@@ -142,11 +143,22 @@ class MyTripsActivity : AppCompatActivity() {
                         val mData = response.body()!!
                         if (mData != null && mData.data != null) {
 
-                            if(mData.data.latest_dispatch_activity == 6){
+                            if (mData.data.latest_dispatch_activity == 1 ||
+                                mData.data.latest_dispatch_activity == 3 ||
+                                mData.data.latest_dispatch_activity == 5 ||
+                                mData.data.latest_dispatch_activity == 6
+                            ) {
                                 startActivity(
                                     Intent(this@MyTripsActivity, TripDetailsActivity::class.java)
                                         .putExtra("trip_reference_number", "${mData.data.trip_reference_number}")
                                         .putExtra("trip_id", "${mData.data.id}")
+                                )
+                            }else{
+                                startActivity(
+                                    Intent(this@MyTripsActivity, BusBookingActivity::class.java)
+                                        .putExtra("trip_reference_number", "${mData.data.trip_reference_number}")
+                                        .putExtra("trip_id", mData.data.id)
+
                                 )
                             }
 

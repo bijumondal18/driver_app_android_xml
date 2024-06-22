@@ -5,6 +5,8 @@ object Constants {
 
     const val API_CONTENT_TYPE = "application/json"
     const val DEVICE_TYPE = "m" //m = mobile
+    const val API_DATE_FORMAT = "dd MMM"
+    const val API_TIME_FORMAT = "HH:mm a"
 
 
     const val BASE_URL = "https://staging.allrideapps.net/api/v2/"

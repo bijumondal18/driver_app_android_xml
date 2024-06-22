@@ -35,6 +35,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.NotificationManagerCompat
 import com.app.allride.driver.R
+import com.app.allride.driver.api.Constants
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.material.snackbar.Snackbar
@@ -142,40 +143,31 @@ class AppHelper {
             return NotificationManagerCompat.from(context).areNotificationsEnabled()
         }
 
-        fun getCabType(type: Int): String {
-            var cabType: String? = null
+        fun getTripStatus(type: Int): String {
+            var tripStatus: String? = null
             when (type) {
-                1 -> cabType = "Compact (Economy)"
-                2 -> cabType = "SUV (Economy)"
-                3 -> cabType = "Sedan (Economy)"
-                4 -> cabType = "Tempo Traveller (Economy)"
-                5 -> cabType = "Assured Dzire (Economy)"
-                6 -> cabType = "Assured Innova (Economy)"
-                7 -> cabType = "Tempo Traveller (9 seater) (Economy)"
-                8 -> cabType = "Tempo Traveller (12 seater) (Economy)"
-                9 -> cabType = "Tempo Traveller (15 seater) (Economy)"
-                10 -> cabType = "Tempo Traveller (19 seater) (Economy)"
-                11 -> cabType = "Shared Sedan (Economy)"
-                12 -> cabType = "Tempo Traveller (26 seater) (Economy)"
-                13 -> cabType = "SUV (7+1) (Economy)"
+                0 -> tripStatus = "Created"
+                1 -> tripStatus = "Scheduled" //Published
+                2 -> tripStatus = "Rejected"
+                3 -> tripStatus = "Cancelled"
             }
-            return cabType!!
+            return tripStatus!!
         }
 
         fun getTripType(type: Int): String {
             var tripType: String? = null
             when (type) {
-                1 -> tripType = "One-Way"
-                2 -> tripType = "Round Trip"
-                3 -> tripType = "Round / Multi Trip"
-                4 -> tripType = "Airport Transfer"
-                5 -> tripType = "Tour Package"
-                6 -> tripType = "Flexxi"
-                7 -> tripType = "Shuttle"
-                8 -> tripType = "Package"
-                9 -> tripType = "Day Rental (4hr-40km)"
-                10 -> tripType = "Day Rental (8hr-80km)"
-                11 -> tripType = "Day Rental (12hr-120km)"
+                1 -> tripType = "Cab Transfer"
+                6 -> tripType = "Bus Transfer"
+//                3 -> tripType = "Round / Multi Trip"
+//                4 -> tripType = "Airport Transfer"
+//                5 -> tripType = "Tour Package"
+//                6 -> tripType = "Flexxi"
+//                7 -> tripType = "Shuttle"
+//                8 -> tripType = "Package"
+//                9 -> tripType = "Day Rental (4hr-40km)"
+//                10 -> tripType = "Day Rental (8hr-80km)"
+//                11 -> tripType = "Day Rental (12hr-120km)"
                 12 -> tripType = "Others"
             }
             return tripType!!
@@ -1030,19 +1022,20 @@ class AppHelper {
             return false
         }
 
-//        @SuppressLint("SimpleDateFormat")
-//        fun getAnyDate(givenDateString: String, dateFormat: String): String {
-//            val formatter = SimpleDateFormat(Constants.API_DATE_FORMAT)
-//            val mDate: Date = formatter.parse(givenDateString)!!
-//            return android.text.format.DateFormat.format(dateFormat, mDate).toString()
-//        }
-//
-//        @SuppressLint("SimpleTimeFormat")
-//        fun getAnyTime(givenTimeString: String, timeFormat: String): String {
-//            val formatter = SimpleDateFormat(Constants.API_TIME_FORMAT)
-//            val mTime: Date = formatter.parse(givenTimeString)!!
-//            return android.text.format.DateFormat.format(timeFormat, mTime).toString()
-//        }
+        @SuppressLint("SimpleDateFormat")
+        fun getAnyDate(givenDateString: String, dateFormat: String): String {
+            val formatter = SimpleDateFormat(Constants.API_DATE_FORMAT)
+            val mDate: Date = formatter.parse(givenDateString)!!
+            return android.text.format.DateFormat.format(dateFormat, mDate).toString()
+        }
+
+        //
+        @SuppressLint("SimpleTimeFormat")
+        fun getAnyTime(givenTimeString: String, timeFormat: String): String {
+            val formatter = SimpleDateFormat(Constants.API_TIME_FORMAT)
+            val mDate: Date = formatter.parse(givenTimeString)!!
+            return android.text.format.DateFormat.format(timeFormat, mDate).toString()
+        }
 
         /*fun getYearMonth(date: String): String {
             val calendar = Calendar.getInstance()

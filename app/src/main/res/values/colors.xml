@@ -10,5 +10,6 @@
     <color name="lightGray">#E5E5E5</color>
     <color name="textField">#EEEEEE</color>
     <color name="darkYellow">#87680C</color>
+    <color name="warning">#FFE39C</color>
     <color name="green">#1FA324</color>
 </resources>

@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.app.allride.driver.MainActivity
 import com.app.allride.driver.R
 import com.app.allride.driver.databinding.ActivitySplashBinding
+import com.app.allride.driver.features.auth.login.ui.LoginActivity
+import com.app.allride.driver.utils.AppPreference
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -18,6 +20,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivitySplashBinding
+    private lateinit var mPreference: AppPreference
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        mPreference = AppPreference(this@SplashActivity)
 
         val fadeIn = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fade_in)
         val fadeOut = android.view.animation.AnimationUtils.loadAnimation(this, R.anim.fade_out)
@@ -38,8 +41,14 @@ class SplashActivity : AppCompatActivity() {
 
             override fun onAnimationEnd(p0: Animation?) {
                 binding.imgSplashLogo.startAnimation(fadeOut)
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-                finish()
+                if(mPreference.isLoggedIn()){
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                    finish()
+                }else{
+                    startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                    finish()
+                }
+
             }
 
             override fun onAnimationRepeat(p0: Animation?) {

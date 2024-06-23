@@ -7,4 +7,107 @@
     android:layout_height="match_parent"
     tools:context=".features.auth.login.ui.LoginActivity">
 
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/edittext_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/text_field_bg"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="@dimen/padding_16"
+        android:drawableTint="@color/darkGray"
+        android:ems="10"
+        android:hint="Enter your email address"
+        android:textSize="@dimen/font_16"
+        android:inputType="textEmailAddress"
+        android:paddingStart="@dimen/padding_16"
+        android:paddingEnd="@dimen/padding_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/edittext_height"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_field_bg"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="@dimen/padding_16"
+        android:drawableTint="@color/darkGray"
+        android:ems="10"
+        android:textSize="@dimen/font_16"
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        android:paddingStart="@dimen/padding_16"
+        android:paddingEnd="@dimen/padding_16"
+        app:layout_constraintEnd_toEndOf="@+id/edt_email"
+        app:layout_constraintStart_toStartOf="@+id/edt_email"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/app_logo" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/primary_button"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edt_password"
+        app:layout_constraintStart_toStartOf="@+id/edt_password"
+        app:layout_constraintTop_toBottomOf="@+id/btn_forget_password" />
+
+    <TextView
+        android:id="@+id/btn_forget_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/text_button"
+        android:text="Forget Password?"
+        android:textAlignment="textEnd"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/text_button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/edt_password"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Email Address"
+        android:textSize="@dimen/font_16"
+        android:fontFamily="@font/euclid_medium"
+        app:layout_constraintStart_toStartOf="@+id/edt_email"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Your Password"
+        android:textSize="@dimen/font_16"
+        android:fontFamily="@font/euclid_medium"
+        app:layout_constraintStart_toStartOf="@+id/edt_password"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

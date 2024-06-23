@@ -15,9 +15,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.app.allride.driver.databinding.ActivityMainBinding
+import com.app.allride.driver.features.auth.login.ui.LoginActivity
 import com.app.allride.driver.features.home.ui.HomeFragment
 import com.app.allride.driver.features.home.ui.OnlineOfflineBottomSheetFragment
 import com.app.allride.driver.features.my_trips.ui.MyTripsActivity
+import com.app.allride.driver.features.notifications.ui.NotificationsActivity
+import com.app.allride.driver.utils.AppPreference
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.material.navigation.NavigationView
 import java.util.concurrent.Delayed
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
+    private lateinit var mPreference: AppPreference
 
     //    private lateinit var toolbar: Toolbar
     private lateinit var onlineOfflineBottomSheetFragment: OnlineOfflineBottomSheetFragment
@@ -58,6 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun initViews() {
         drawerLayout = binding.mainDrawerLayout
         navView = binding.navView
+        mPreference = AppPreference(this@MainActivity)
 //        toggleSwitch = binding.toggleSwitch
         onlineOfflineBottomSheetFragment = OnlineOfflineBottomSheetFragment()
     }
@@ -81,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_notification -> {
-
+                    startActivity(Intent(this@MainActivity, NotificationsActivity::class.java))
                 }
 
                 R.id.nav_help_center -> {
@@ -93,6 +98,11 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_logout -> {
+                    // Clear shared preference and navigate to login activity
+                    mPreference.clearSharedPreference().run {
+                        startActivity(Intent(this@MainActivity,LoginActivity::class.java))
+                        finish()
+                    }
 
                 }
             }

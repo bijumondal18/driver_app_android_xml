@@ -12,58 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- Main content layout -->
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent">-->
-
-    <!--        &lt;!&ndash; Toolbar &ndash;&gt;-->
-    <!--        <androidx.appcompat.widget.Toolbar-->
-    <!--            android:id="@+id/toolbar"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="?attr/actionBarSize"-->
-    <!--            android:background="@color/white"-->
-    <!--            android:elevation="@dimen/elevation_1dp"-->
-    <!--            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-    <!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
-
-    <!--            <Switch-->
-    <!--                android:id="@+id/toggle_switch"-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_gravity="end"-->
-    <!--                android:layout_marginEnd="16dp"-->
-    <!--                tools:ignore="UseSwitchCompatOrMaterialXml" />-->
-
-    <!--            <TextView-->
-    <!--                android:id="@+id/tv_toolbar_title"-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:layout_gravity="center"-->
-    <!--                android:gravity="center"-->
-    <!--                android:text="Offline"-->
-    <!--                android:textColor="@color/black"-->
-    <!--                android:textSize="@dimen/font_18"-->
-    <!--                android:textStyle="bold" />-->
-
-    <!--        </androidx.appcompat.widget.Toolbar>-->
-
-    <!--        &lt;!&ndash; Main content area &ndash;&gt;-->
-    <!--        <FrameLayout-->
-    <!--            android:id="@+id/content_frame"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="match_parent"-->
-    <!--            android:layout_below="@id/toolbar" />-->
-    <!--    </RelativeLayout>-->
 
     <!-- Navigation drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="276dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="false"
         app:headerLayout="@layout/nav_header"
+        app:drawerLayoutCornerSize="0dp"
         app:itemTextAppearance="@style/DrawerItemTextStyle"
         app:menu="@menu/nav_menu" />
 
